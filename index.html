@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Senara!</title>
+  <meta name="description" content="A magical interactive birthday experience crafted especially for Senara.">
+  <link rel="stylesheet" href="index.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Envelope Intro Overlay -->
+  <section id="intro-cover" aria-label="Welcome screen">
+    <div class="intro-content">
+      <div class="intro-title">For Someone Special</div>
+      <div class="intro-subtitle">A little surprise awaits you</div>
+      <div class="envelope-wrapper" id="envelope">
+        <div class="envelope-flap"></div>
+        <div class="envelope-letter">
+          <div class="letter-text">Open Me!</div>
+          <div class="letter-subtext">Tap the seal</div>
+        </div>
+        <div class="envelope-seal" id="envelope-seal">
+          <i class="fa-solid fa-heart" style="color: #fff;"></i>
+        </div>
+        <div class="envelope-front"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Website Container -->
+  <main class="main-wrapper">
+    <!-- Header Greeting -->
+    <header>
+      <span class="header-accent">Wishing a beautiful day to</span>
+      <h1 class="main-title" id="main-title">Happy Birthday, Senara!</h1>
+      <div class="bday-date">June 2rd</div>
+    </header>
+
+    <!-- Hero Gallery / Portrait Section -->
+    <section class="section-container hero-wrapper" id="hero-section" aria-labelledby="hero-heading">
+      <h2 id="hero-heading" class="sr-only"
+        style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">
+        Introduction to Senara</h2>
+      <div class="hero-art-container">
+        <!-- 3D Parallax Photo Card -->
+        <div class="photo-3d-card" id="hero-card">
+          <div class="photo-glow-ring"></div>
+          <div class="photo-card-inner">
+            <div class="photo-backdrop"></div>
+            <img src="assets/senara-nobg.png" alt="Senara" class="senara-image" id="hero-portrait">
+          </div>
+        </div>
+      </div>
+      <div class="hero-text-content glass-card">
+        <span class="hero-quote">"To a year filled with magic, laughter, and endless possibilities."</span>
+        <p class="hero-para">
+          Today is all about celebrating you, Senara! May your days be bright, your heart light, and your dreams big.
+          Thank you for being such a wonderful person. Let's make this year your best chapter yet!
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-value">365</span>
+            <span class="stat-label">New Chances</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">100%</span>
+            <span class="stat-label">Smiles & Joy</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">∞</span>
+            <span class="stat-label">Wishes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Virtual Birthday Cake Section -->
+    <section class="section-container glass-card" id="cake-section" aria-labelledby="cake-title">
+      <div class="cake-layout">
+        <div class="cake-instructions">
+          <h2 class="section-title" id="cake-title">Virtual Cake Ceremony</h2>
+          <p class="hero-para" style="margin-top: 10px;">
+            No birthday is complete without making a wish. Click on each of the candles to blow them out, and make a
+            secret wish as you do!
+          </p>
+        </div>
+        <div class="cake-wrapper">
+          <div class="cake-stand"></div>
+          <div class="cake-tier">
+            <!-- Drips decoration -->
+            <div class="drip-container">
+              <div class="drip"></div>
+              <div class="drip"></div>
+              <div class="drip"></div>
+              <div class="drip"></div>
+              <div class="drip"></div>
+              <div class="drip"></div>
+              <div class="drip"></div>
+              <div class="drip"></div>
+              <div class="drip"></div>
+              <div class="drip"></div>
+              <div class="drip"></div>
+              <div class="drip"></div>
+            </div>
+          </div>
+          <!-- 5 Candles -->
+          <div class="candles-row" id="candles-row">
+            <div class="candle-container" id="candle-1">
+              <div class="flame"></div>
+              <div class="wick"></div>
+              <div class="candle"></div>
+              <div class="smoke-puff"></div>
+            </div>
+            <div class="candle-container" id="candle-2">
+              <div class="flame"></div>
+              <div class="wick"></div>
+              <div class="candle"></div>
+              <div class="smoke-puff"></div>
+            </div>
+            <div class="candle-container" id="candle-3">
+              <div class="flame"></div>
+              <div class="wick"></div>
+              <div class="candle"></div>
+              <div class="smoke-puff"></div>
+            </div>
+            <div class="candle-container" id="candle-4">
+              <div class="flame"></div>
+              <div class="wick"></div>
+              <div class="candle"></div>
+              <div class="smoke-puff"></div>
+            </div>
+            <div class="candle-container" id="candle-5">
+              <div class="flame"></div>
+              <div class="wick"></div>
+              <div class="candle"></div>
+              <div class="smoke-puff"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Polaroid Captured Moments Section -->
+    <section class="section-container" id="memories-section" aria-labelledby="memories-title">
+      <h2 class="section-title" id="memories-title">Captured Moments</h2>
+      <div class="gallery-grid">
+        <div class="polaroid-card" style="--rotation: -3deg;">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/senara.jpg" alt="Senara Classic Portrait">
+          </div>
+          <div class="polaroid-caption">Senara</div>
+        </div>
+        <div class="polaroid-card" style="--rotation: 2deg;">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/birthday_card.png" alt="Happy Birthday Greeting Card">
+          </div>
+          <div class="polaroid-caption">Happy Birthday</div>
+        </div>
+        <div class="polaroid-card" style="--rotation: -1.5deg;">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/senara-enhanced.png" alt="Senara Enhanced Portrait">
+          </div>
+          <div class="polaroid-caption">Radiant & Bright</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliments/Cookies Flip Cards Section -->
+    <section class="section-container" id="compliments-section" aria-labelledby="compliments-title">
+      <h2 class="section-title" id="compliments-title">Senara's Birthday Badges</h2>
+      <div class="compliments-grid">
+        <div class="flip-card" id="card-1">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>Kind Heart</span>
+            </div>
+            <div class="flip-card-back">
+              <p>Always spreading warmth and supportive vibes to everyone around.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" id="card-2">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span>Radiant Smile</span>
+            </div>
+            <div class="flip-card-back">
+              <p>Possesses a natural charm that brightens up even the dullest rooms.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" id="card-3">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fa-solid fa-brain"></i>
+              <span>Bright Mind</span>
+            </div>
+            <div class="flip-card-back">
+              <p>Creative, thoughtful, and quick to find elegant solutions to any challenge.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" id="card-4">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fa-solid fa-star"></i>
+              <span>Loyal Friend</span>
+            </div>
+            <div class="flip-card-back">
+              <p>A trustworthy companion who listens carefully and stands by your side.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Balloon Pop Game -->
+    <section class="section-container glass-card" id="game-section" aria-labelledby="game-title">
+      <h2 class="section-title" id="game-title">Balloon Pop Challenge</h2>
+      <div class="game-score-board">
+        Score: <span id="game-score">0</span> / 22
+      </div>
+      <div class="game-viewport" id="game-viewport">
+        <!-- Floating balloons will be dynamically appended here -->
+        <div class="game-canvas-overlay"
+          style="display: flex; justify-content: center; align-items: center; height: 100%;">
+          <button class="game-start-btn" id="game-start-btn">Start Game</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Wish Board Section -->
+    <section class="section-container glass-card" id="wish-section" aria-labelledby="wish-title">
+      <div class="wish-board-wrapper">
+        <div class="wish-form-card">
+          <h2 id="wish-title">Leave a Birthday Wish</h2>
+          <p class="hero-para" style="font-size: 0.95rem;">
+            Write a special message for Senara. It will turn into a floating balloon in her wish jar, which she can
+            click to read!
+          </p>
+          <form id="wish-form" onsubmit="return false;">
+            <div class="wish-input-group">
+              <label for="wisher-name">Your Name</label>
+              <input type="text" id="wisher-name" placeholder="e.g., Ash" required>
+            </div>
+            <div class="wish-input-group" style="margin-top: 15px;">
+              <label for="wisher-message">Your Wish</label>
+              <textarea id="wisher-message" rows="4" placeholder="Wishing you the happiest birthday..."
+                required></textarea>
+            </div>
+            <button type="submit" class="submit-wish-btn" style="margin-top: 20px;" id="submit-wish-btn">Send
+              Balloon</button>
+          </form>
+        </div>
+        <div class="wishes-display-area" id="wishes-display-area">
+          <!-- Floating wish bubbles go here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Wish Detail Modal -->
+  <div class="wish-modal" id="wish-modal" role="dialog" aria-modal="true" aria-labelledby="modal-author">
+    <div class="wish-modal-card">
+      <button class="wish-modal-close" id="wish-modal-close" aria-label="Close modal">&times;</button>
+      <div class="wish-modal-decor">🎈</div>
+      <div class="wish-modal-content" id="wish-modal-text"></div>
+      <div class="wish-modal-author" id="wish-modal-author"></div>
+    </div>
+  </div>
+
+  <!-- Custom Floating Music Controller -->
+  <div class="music-controller" id="music-controller">
+    <div class="music-disc">
+      <i class="fa-solid fa-music"></i>
+    </div>
+    <div class="music-info">
+      <span class="music-title">Birthday Harmonies</span>
+      <span class="music-status" id="music-status">Play Sound</span>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
